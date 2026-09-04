@@ -1,0 +1,179 @@
+
+<div class="row">
+  <div class="col-12">
+    <div class="page-title-box d-sm-flex align-items-center justify-content-between pb-3">
+      <h4 class="mb-sm-0 font-size-18"><%= page_title %></h4>
+      <div class="page-title-right">
+        <a class="btn btn-light" type="button">
+          <i class="label-icon mdi mdi-help"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form method="get" action="<%= path_route %>" class="card card-body">
+  <div class="row align-items-center justify-content-center">
+
+    <div class="mb-2 col-md-3">
+      <input class="form-control" placeholder="check by document no" />
+    </div>
+    
+    <div class="mb-2 col-md-2">
+      <div class="input-group" id="date-start">
+        <input class="form-control" data-date-autoclose="true" data-date-container="#date-start" data-date-format="dd M yyyy" data-provide="datepicker" type="text" placeholder="check by birth date" />
+      </div>
+    </div>
+
+    <div class="mb-2 col-md-3">
+      <select class="form-control select2" placeholder="Choose ...">
+          <option value="">check by Nationality</option>
+          <option value="">Country Name 01</option>
+          <option value="">Country Name 02</option>
+          <option value="">Country Name 03</option>
+          <option value="">Country Name 04</option>
+          <option value="">Country Name 05</option>
+          <option value="">Country Name 06</option>
+          <option value="">Country Name 07</option>
+          <option value="">Country Name 08</option>
+          <option value="">Country Name 09</option>
+          <option value="">Country Name 10</option>
+      </select>
+    </div>
+
+    <div class="mb-2 col-md-3">
+      <input class="form-control" placeholder="check by full name" />
+    </div>
+
+    <div class="mb-2 col-md-1">
+      <button class="btn btn-light text-muted" type="submit" name="submit-check" value="submit-check">
+        <i class="label-icon mdi mdi-filter"></i> check
+      </button>
+    </div>
+
+  </div>
+</form>
+
+<div class="row">
+
+  <% for (var i = 1; i <= 5; i++) { %>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="text-center">
+            <i class="h2 mb-0 text-muted fas fa-user"></i>
+          </div>
+
+          <div class="text-center mb-2">
+            <h6 class="font-size-12 mt-3 mb-1">Sanction full name</h6>
+          </div>
+
+          <div class="mt-2 pt-1">
+             <a class="btn btn-soft-danger d-block" type="button" data-bs-target="#exampleModalScrollable" data-bs-toggle="modal">
+               View Sanction
+               <span class="badge bg-danger ms-1">HIGH</span>
+             </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="text-center">
+            <i class="h2 mb-0 text-muted fas fa-user"></i>
+          </div>
+
+          <div class="text-center mb-2">
+            <h6 class="font-size-12 mt-3 mb-1">Sanction full name</h6>
+          </div>
+
+          <div class="mt-2 pt-1">
+             <a class="btn btn-soft-warning d-block" type="button" data-bs-target="#exampleModalScrollable" data-bs-toggle="modal">
+               View Sanction
+               <span class="badge bg-warning ms-1">HIGH</span>
+             </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="text-center">
+            <i class="h2 mb-0 text-muted fas fa-user"></i>
+          </div>
+
+          <div class="text-center mb-2">
+            <h6 class="font-size-12 mt-3 mb-1">Sanction full name</h6>
+          </div>
+
+          <div class="mt-2 pt-1">
+             <a class="btn btn-soft-info d-block" type="button" data-bs-target="#exampleModalScrollable" data-bs-toggle="modal">
+               View Sanction
+               <span class="badge bg-info ms-1">LOW</span>
+             </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <% } %>
+
+</div>
+
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title pb-1">Sanction Detail</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+      </div>
+      
+      <div class="modal-body">
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreetrutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consecteturet. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreetrutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consecteturet. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreetrutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consecteturet. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreetrutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consecteturet. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreetrutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consecteturet. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreetrutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consecteturet. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<%-
+  extraScript = `<script>
+    $(document).ready(function () {
+
+      $("body").addClass("sidebar-enable vertical-collpsed");
+
+      $(".select2").select2();
+
+    });
+  </script>`;
+%>

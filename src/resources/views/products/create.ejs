@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h1>Create Product</h1>
+  <a href="/products" class="btn">&larr; Back to list</a>
+</div>
+
+<% if (typeof error !== 'undefined' && error) { %>
+  <p class="alert alert-error"><%= error %></p>
+<% } %>
+
+<form action="/products/create" method="POST" class="form card">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required />
+
+  <label for="description">Description</label>
+  <textarea id="description" name="description" rows="4"></textarea>
+
+  <label for="price">Price</label>
+  <input type="number" id="price" name="price" step="0.01" min="0" required />
+
+  <button type="submit" class="btn btn-primary">Save Product</button>
+</form>

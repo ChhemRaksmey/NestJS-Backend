@@ -1,0 +1,158 @@
+
+<form action="<%= path_route %>/create" method="POST">
+
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <h4 class="mb-sm-0 font-size-18"><%= page_title %></h4>
+        <div class="page-title-right">
+          <button class="w-sm btn btn-soft-primary btn-label" type="submit">
+            <i class="label-icon mdi mdi-check"></i> Submit
+          </button>
+          <a class="w-sm btn btn-light btn-label" type="button" href="<%= path_route %>">
+            <i class="label-icon mdi mdi-chevron-up"></i> Cancel
+          </a>
+          <a class="btn btn-light" type="button">
+            <i class="label-icon mdi mdi-help"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-body">
+    <div class="row">
+    
+      <div class="mb-2 col-md-4">
+        <label class="form-label mb-0">Signon Name</label>
+        <input class="form-control" />
+      </div>
+    
+      <div class="mb-2 col-md-8">
+        <label class="form-label mb-0">Full Name</label>
+        <input class="form-control" />
+      </div>
+    
+      <div class="mb-2 col-md-2">
+        <label class="form-label mb-0">Date Start</label>
+        <div class="input-group" id="date-start">
+          <input class="form-control" data-date-autoclose="true" data-date-container="#date-start" data-date-format="dd M, yyyy" data-provide="datepicker" type="text" />
+        </div>
+      </div>
+    
+      <div class="mb-2 col-md-2">
+        <label class="form-label mb-0">Date End</label>
+        <div class="input-group" id="date-end">
+          <input class="form-control" data-date-autoclose="true" data-date-container="#date-end" data-date-format="dd M, yyyy" data-provide="datepicker" type="text" />
+        </div>
+      </div>
+    
+      <div class="mb-2 col-md-2">
+        <label class="form-label mb-0">Time Start</label>
+        <div class="input-group" id="picker-time-start-group">
+          <input class="form-control" data-provide="picker-time-start-group" id="picker-time-start" type="text" />
+        </div>
+      </div>
+    
+      <div class="mb-2 col-md-2">
+        <label class="form-label mb-0">Time End</label>
+        <div class="input-group" id="picker-time-end-group">
+          <input class="form-control" data-provide="picker-time-end-group" id="picker-time-end" type="text" />
+        </div>
+      </div>
+    
+      <div class="mb-2 col-md-4">
+        <label class="form-label mb-0">Default Dashboard</label>
+        <select class="form-control select2" placeholder="Choose ...">
+          <option value="">Choose ...</option>
+          <option value="01">Dashboard 01</option>
+          <option value="02">Dashboard 02</option>
+          <option value="03">Dashboard 03</option>
+          <option value="04">Dashboard 04</option>
+          <option value="05">Dashboard 05</option>
+          <option value="06">Dashboard 06</option>
+          <option value="07">Dashboard 07</option>
+          <option value="08">Dashboard 08</option>
+          <option value="09">Dashboard 09</option>
+          <option value="10">Dashboard 10</option>
+        </select>
+      </div>
+    
+      <div class="mb-2 col-md-12">
+        <label class="form-label mb-0">Access Dashboards</label>
+        <select class="select2 form-control select2-multiple" data-placeholder="Choose ..." multiple="multiple">
+          <option value="all">All Dashboards</option>
+          <option value="01">Dashboard 01</option>
+          <option value="02">Dashboard 02</option>
+          <option value="03">Dashboard 03</option>
+          <option value="04">Dashboard 04</option>
+          <option value="05">Dashboard 05</option>
+          <option value="06">Dashboard 06</option>
+          <option value="07">Dashboard 07</option>
+          <option value="08">Dashboard 08</option>
+          <option value="09">Dashboard 09</option>
+          <option value="10">Dashboard 10</option>
+        </select>
+      </div>
+    
+      <div class="mb-2 col-md-12">
+        <label class="form-label mb-0">Access Group Privileges</label>
+        <select class="select2 form-control select2-multiple" data-placeholder="Choose ..." multiple="multiple">
+          <option value="all">All Group Privileges</option>
+          <option value="01">Group Privileges 01</option>
+          <option value="02">Group Privileges 02</option>
+          <option value="03">Group Privileges 03</option>
+          <option value="04">Group Privileges 04</option>
+          <option value="05">Group Privileges 05</option>
+          <option value="06">Group Privileges 06</option>
+          <option value="07">Group Privileges 07</option>
+          <option value="08">Group Privileges 08</option>
+          <option value="09">Group Privileges 09</option>
+          <option value="10">Group Privileges 10</option>
+        </select>
+      </div>
+    
+      <div class="mb-2 col-md-12">
+        <label class="form-label mb-0">Access Group Reports</label>
+        <select class="select2 form-control select2-multiple" data-placeholder="Choose ..." multiple="multiple">
+          <option value="all">All Group Reports</option>
+          <option value="01">Group Reports 01</option>
+          <option value="02">Group Reports 02</option>
+          <option value="03">Group Reports 03</option>
+          <option value="04">Group Reports 04</option>
+          <option value="05">Group Reports 05</option>
+          <option value="06">Group Reports 06</option>
+          <option value="07">Group Reports 07</option>
+          <option value="08">Group Reports 08</option>
+          <option value="09">Group Reports 09</option>
+          <option value="10">Group Reports 10</option>
+        </select>
+      </div>
+    
+    </div>
+  </div>
+
+</form>
+
+
+<%-
+  extraScript = `<script>
+    $(document).ready(function () {
+      
+      $(".select2").select2();
+
+      $("#picker-time-start").timepicker({
+        showMeridian: !1,
+        icons: { up: "mdi mdi-chevron-up", down: "mdi mdi-chevron-down" },
+        appendWidgetTo: "#picker-time-start-group",
+      });
+
+      $("#picker-time-end").timepicker({
+        showMeridian: !1,
+        icons: { up: "mdi mdi-chevron-up", down: "mdi mdi-chevron-down" },
+        appendWidgetTo: "#picker-time-end-group",
+      });
+      
+    });
+  </script>`;
+%>

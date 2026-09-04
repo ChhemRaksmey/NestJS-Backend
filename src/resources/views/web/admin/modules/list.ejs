@@ -1,0 +1,90 @@
+
+<div class="row">
+  <div class="col-12">
+    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+      <h4 class="mb-sm-0 font-size-18"><%= page_title %></h4>
+      <div class="page-title-right">
+        <a class="w-sm btn btn-soft-primary btn-label" type="button" href="<%= path_route %>/create">
+          <i class="label-icon mdi mdi-plus"></i> Add New
+        </a>
+        <a class="btn btn-light" type="button" href="<%= path_route %>">
+          <i class="label-icon mdi mdi-refresh"></i>
+        </a>
+        <a class="btn btn-light" type="button">
+          <i class="label-icon mdi mdi-help"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card card-body">
+
+  <table class="table table-striped" id="dt-list">
+    <thead>
+      <tr>
+        <th class="bg-primary text-white py-1 col-10">Module Name</th>
+        <th class="bg-primary text-white py-1 col-1 text-center">Status</th>
+        <th class="bg-primary text-white py-1 col-1 text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (records.length > 0) { %>
+        <% records.forEach(function(col) { %>
+          <tr>
+            <td class="py-1"><%= col.fullName %></td>
+            <td class="py-1 text-center">
+              <% if (col.status === 'Y') { %><span class="badge bg-success">Active</span>
+              <% } else { %><span class="badge bg-danger">Disabled</span>
+              <% } %>
+            </td>
+            <td class="py-1 text-center">
+              <div class="btn-group dropstart">
+                <a href="javascript: void(0);" class="dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="fas fa-ellipsis-h"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="<%= path_route +"/"+ col.idModule %>/view">
+                    <i class="me-2 far fa-eye"></i> View
+                  </a>
+                  <a class="dropdown-item" href="<%= path_route +"/"+ col.idModule %>/edit">
+                    <i class="me-2 far fa-edit"></i> Edit
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="<%= path_route +"/"+ col.idModule %>/authorize">
+                    <i class="me-2 far fa-check-circle"></i> Authorize
+                  </a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        <% }); %>
+      <% } %>
+    </tbody>
+  </table>
+
+</div>
+
+
+<%-
+  extraScript = `<script>
+    $(document).ready(function () {
+
+      $("#dt-list").DataTable({
+        ordering: false,
+        paging: true,
+        pagingType: "full_numbers",
+        language: {
+          paginate: {
+            first: '<i class="fas fa-angle-double-left"></i>',
+            previous: '<i class="fas fa-angle-left"></i>',
+            next: '<i class="fas fa-angle-right"></i>',
+            last: '<i class="fas fa-angle-double-right"></i>'
+          }
+        }
+      });  
+      $(".dataTables_length select").addClass("form-select form-select-sm");
+
+    });
+  </script>`;
+%>

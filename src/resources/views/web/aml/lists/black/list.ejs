@@ -1,0 +1,71 @@
+
+<div class="row">
+  <div class="col-12">
+    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+      <h4 class="mb-sm-0 font-size-18"><%= page_title %></h4>
+      <div class="page-title-right">
+        <a class="btn btn-light" type="button">
+          <i class="label-icon mdi mdi-refresh"></i>
+        </a>
+        <a class="btn btn-light" type="button">
+          <i class="label-icon mdi mdi-help"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card card-body">
+
+  <table class="table table-striped" id="dt-list">
+    <thead>
+      <tr>
+        <th class="bg-primary text-white py-1 col-2 text-center">Resource</th>
+        <th class="bg-primary text-white py-1 col-1 text-center">Type</th>
+        <th class="bg-primary text-white py-1 col-5">Sanction Full Name</th>
+        <th class="bg-primary text-white py-1 col-3 text-center">Nationality</th>
+        <th class="bg-primary text-white py-1 col-1 text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td class="py-1 text-center">UN</td>
+        <td class="py-1 text-center">Consumer</td>
+        <td class="py-1">Sanction Full Name</td>
+        <td class="py-1 text-center">CambodiaCambodiaCambodia</td>
+        <td class="py-1 text-center">
+          <a class="text-primary" type="button">
+            <i class="fas fa-eye"></i>
+          </a>
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>
+
+</div>
+
+
+<%-
+  extraScript = `<script>
+    $(document).ready(function () {
+
+      $("#dt-list").DataTable({
+        ordering: false,
+        paging: true,
+        pagingType: "full_numbers",
+        language: {
+          paginate: {
+            first: '<i class="fas fa-angle-double-left"></i>',
+            previous: '<i class="fas fa-angle-left"></i>',
+            next: '<i class="fas fa-angle-right"></i>',
+            last: '<i class="fas fa-angle-double-right"></i>'
+          }
+        }
+      });  
+      $(".dataTables_length select").addClass("form-select form-select-sm");
+
+    });
+  </script>`;
+%>

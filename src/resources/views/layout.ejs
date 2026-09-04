@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include('partials/html-styles') %>
+    </head>
+
+    <body <% if (typeof user !== 'undefined' && user) { %> data-sidebar="" <% } %>>
+
+        <% if (typeof user !== 'undefined' && user) { %>
+
+            <div id="layout-wrapper">
+
+                <%- include('partials/navigation') %>
+                <%- include('partials/sidebar') %>
+
+                <div class="main-content">
+                    <div class="page-content">
+                        <div class="container-fluid">
+                            <%- body %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="rightbar-overlay"></div>
+        
+        <% } else { %>
+            <%- body %>
+        <% } %>
+
+        <%- include('partials/html-scripts') %>
+
+    </body>
+
+</html>

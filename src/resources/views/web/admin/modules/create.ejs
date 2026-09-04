@@ -1,0 +1,77 @@
+
+<form action="<%= path_route %>/create" method="POST">
+
+  <% if (typeof error !== 'undefined' && error.length > 0) { %>
+    <div class="alert alert-danger">
+      <ul class="mb-0">
+        <% error.forEach(function (message) { %>
+          <li><%= message %></li>
+        <% }); %>
+      </ul>
+    </div>
+  <% } %>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <h4 class="mb-sm-0 font-size-18"><%= page_title %></h4>
+        <div class="page-title-right">
+          <button class="w-sm btn btn-soft-primary btn-label" type="submit">
+            <i class="label-icon mdi mdi-check"></i> Submit
+          </button>
+          <a class="w-sm btn btn-light btn-label" type="button" href="<%= path_route %>">
+            <i class="label-icon mdi mdi-chevron-up"></i> Cancel
+          </a>
+          <a class="btn btn-light" type="button">
+            <i class="label-icon mdi mdi-help"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-body">
+
+    <div class="mb-2 row">
+      <label class="col-md-2 col-form-label">Module Name</label>
+      <div class="col-md-5">
+        <input class="form-control" name="full_name" value="<%= form.full_name || '' %>" />
+      </div>
+    </div>
+
+    <div class="mb-2 row">
+      <label class="col-md-2 col-form-label">Status</label>
+      <div class="col-md-5 d-flex col-form-label">
+
+        <div class="form-check me-3">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="status" value="Y" <%= form.status === 'Y' || !form.status ? 'checked' : '' %> /> Enable
+          </label>
+        </div>
+
+        <div class="form-check me-3">
+          <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="status" value="N" <%= form.status === 'N' ? 'checked' : '' %> /> Disable
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mb-2 row">
+      <label class="col-md-2 col-form-label">Narrative</label>
+      <div class="col-md-5">
+        <textarea class="form-control" rows="3" name="narrative"><%= form.narrative || '' %></textarea>
+      </div>
+    </div>
+
+  </div>
+
+</form>
+
+
+<%-
+  extraScript = `<script>
+    $(document).ready(function () {});
+  </script>`;
+%>

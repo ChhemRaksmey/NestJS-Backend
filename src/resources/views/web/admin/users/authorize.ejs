@@ -1,0 +1,230 @@
+
+<form action="<%= path_route %>/<%= id %>/authorize" method="POST">
+
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <h4 class="mb-sm-0 font-size-18"><%= page_title %></h4>
+        <div class="page-title-right">
+          <button class="w-sm btn btn-soft-primary btn-label" type="submit">
+            <i class="label-icon mdi mdi-check"></i> Approve
+          </button>
+          <button class="w-sm btn btn-soft-danger btn-label" type="submit">
+            <i class="label-icon mdi mdi-check"></i> Delete
+          </button>
+          <a class="w-sm btn btn-light btn-label" type="button" href="<%= path_route %>">
+            <i class="label-icon mdi mdi-chevron-up"></i> Cancel
+          </a>
+          <a class="btn btn-light" type="button">
+            <i class="label-icon mdi mdi-help"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-body">
+
+    <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link py-1 active" data-bs-toggle="tab" href="#tabAuthoriseMaster" role="tab"
+          aria-selected="true">
+          <span class="d-none d-sm-block">Master</span>
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link py-1" data-bs-toggle="tab" href="#tabAuthoriseAudit" role="tab" aria-selected="false"
+          tabindex="-1">
+          <span class="d-none d-sm-block">Audit</span>
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link py-1" data-bs-toggle="tab" href="#tabAuthoriseChanges" role="tab" aria-selected="false"
+          tabindex="-1">
+          <span class="d-none d-sm-block">Changes</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content p-3 text-muted">
+
+      <div class="tab-pane active" role="tabpanel" id="tabAuthoriseMaster">
+        <div class="row">
+    
+          <div class="mb-2 col-md-4">
+            <label class="form-label mb-0">Signon Name</label>
+            <input class="form-control" reaonly disabled />
+          </div>
+        
+          <div class="mb-2 col-md-8">
+            <label class="form-label mb-0">Full Name</label>
+            <input class="form-control" reaonly disabled />
+          </div>
+        
+          <div class="mb-2 col-md-2">
+            <label class="form-label mb-0">Date Start</label>
+            <input class="form-control" reaonly disabled />
+          </div>
+        
+          <div class="mb-2 col-md-2">
+            <label class="form-label mb-0">Date End</label>
+            <input class="form-control" reaonly disabled />
+          </div>
+        
+          <div class="mb-2 col-md-2">
+            <label class="form-label mb-0">Time Start</label>
+            <input class="form-control" reaonly disabled />
+          </div>
+        
+          <div class="mb-2 col-md-2">
+            <label class="form-label mb-0">Time End</label>
+            <input class="form-control" reaonly disabled />
+          </div>
+        
+          <div class="mb-2 col-md-4">
+            <label class="form-label mb-0">Default Dashboard</label>
+           <input class="form-control" reaonly disabled />
+          </div>
+        
+          <div class="mb-2 col-md-12">
+            <label class="form-label mb-0">Access Dashboards</label>
+            <select class="select2 form-control select2-multiple" data-placeholder="Choose ..." multiple="multiple" disabled>
+              <option value="all">All Dashboards</option>
+              <option value="01">Dashboard 01</option>
+              <option value="02">Dashboard 02</option>
+              <option value="03" selected>Dashboard 03</option>
+              <option value="04">Dashboard 04</option>
+              <option value="05" selected>Dashboard 05</option>
+              <option value="06">Dashboard 06</option>
+              <option value="07">Dashboard 07</option>
+              <option value="08" selected>Dashboard 08</option>
+              <option value="09">Dashboard 09</option>
+              <option value="10">Dashboard 10</option>
+            </select>
+          </div>
+        
+          <div class="mb-2 col-md-12">
+            <label class="form-label mb-0">Access Group Privileges</label>
+            <select class="select2 form-control select2-multiple" data-placeholder="Choose ..." multiple="multiple" disabled>
+              <option value="all">All Group Privileges</option>
+              <option value="01">Group Privileges 01</option>
+              <option value="02" selected>Group Privileges 02</option>
+              <option value="03">Group Privileges 03</option>
+              <option value="04">Group Privileges 04</option>
+              <option value="05" selected>Group Privileges 05</option>
+              <option value="06">Group Privileges 06</option>
+              <option value="07">Group Privileges 07</option>
+              <option value="08" selected>Group Privileges 08</option>
+              <option value="09">Group Privileges 09</option>
+              <option value="10">Group Privileges 10</option>
+            </select>
+          </div>
+        
+          <div class="mb-2 col-md-12">
+            <label class="form-label mb-0">Access Group Reports</label>
+            <select class="select2 form-control select2-multiple" data-placeholder="Choose ..." multiple="multiple" disabled>
+              <option value="all">All Group Reports</option>
+              <option value="01">Group Reports 01</option>
+              <option value="02" selected>Group Reports 02</option>
+              <option value="03">Group Reports 03</option>
+              <option value="04">Group Reports 04</option>
+              <option value="05" selected>Group Reports 05</option>
+              <option value="06">Group Reports 06</option>
+              <option value="07">Group Reports 07</option>
+              <option value="08" selected>Group Reports 08</option>
+              <option value="09">Group Reports 09</option>
+              <option value="10">Group Reports 10</option>
+            </select>
+          </div>
+        
+        </div>
+      </div>
+
+      <div class="tab-pane" role="tabpanel" id="tabAuthoriseAudit">
+        <table class="table table-striped table-borderless">
+          <thead>
+            <tr>
+              <th class="py-1 col-2"></th>
+              <th class="py-1 col-10"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-1">Record Status</td>
+              <td class="py-1">xxxxxxxxxxxxxxxxxxxx</td>
+            </tr>
+            <tr>
+              <td class="py-1">Inputter name</td>
+              <td class="py-1">xxxxxxxxxxxxxxxxxxxx</td>
+            </tr>
+            <tr>
+              <td class="py-1">Input Date Time</td>
+              <td class="py-1">xxxxxxxxxxxxxxxxxxxx</td>
+            </tr>
+            <tr>
+              <td class="py-1">Authoriser Name</td>
+              <td class="py-1">xxxxxxxxxxxxxxxxxxxx</td>
+            </tr>
+            <tr>
+              <td class="py-1">Authoriser Date Time</td>
+              <td class="py-1">xxxxxxxxxxxxxxxxxxxx</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab-pane" role="tabpanel" id="tabAuthoriseChanges">
+        <table class="table table-striped table-borderless">
+          <thead>
+            <tr>
+              <th class="py-1 col-md-2">Field Name</th>
+              <th class="py-1 col-md-5">Old Value</th>
+              <th class="py-1 col-md-5">New Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-1">Field Name 1</td>
+              <td class="py-1"></td>
+              <td class="py-1"></td>
+            </tr>
+            <tr>
+              <td class="py-1">Field Name 2</td>
+              <td class="py-1"></td>
+              <td class="py-1"></td>
+            </tr>
+            <tr>
+              <td class="py-1">Field Name 3</td>
+              <td class="py-1"></td>
+              <td class="py-1"></td>
+            </tr>
+            <tr>
+              <td class="py-1">Field Name 4</td>
+              <td class="py-1"></td>
+              <td class="py-1"></td>
+            </tr>
+            <tr>
+              <td class="py-1">Field Name 5</td>
+              <td class="py-1"></td>
+              <td class="py-1"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>
+
+
+<%-
+  extraScript = `<script>
+    $(document).ready(function () {
+      
+      $(".select2").select2();
+      
+    });
+  </script>`;
+%>
